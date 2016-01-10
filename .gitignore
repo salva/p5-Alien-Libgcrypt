@@ -1,6 +1,5 @@
 Build
-MANIFEST
-MANIFEST.SKIP*
+MANIFEST*
 MYMETA.*
 _build/
 _share/
