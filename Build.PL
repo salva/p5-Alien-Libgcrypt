@@ -70,6 +70,37 @@ sub requires {
 
 *build_requires = \&requires;
 
+sub libgpg_error_config {
+  my ($self, $method) = @_;
+  unless ($self->use_installed_version) {
+    require Alien::Libgpg_error;
+    return Alien::Libgpg_error->$method;
+  }
+  return;
+}
+
+sub alien_build_commands {
+  my $self = shift;
+  if ($self->{action} and $self->{action} eq 'Build_PL') {
+    return ["echo '*** to be filled later ***'", "exit 1"]
+  }
+
+  my $config_cmd = "%c --prefix=%s";
+  require Alien::Libgpg_error;
+  my $alge = Alien::Libgpg_error->new;
+  if ($alge->config('install_type') ne 'system') {
+    if (defined(my $alge_dist_dir = $alge->dist_dir)) {
+      if ($^O eq 'MSWin32') {
+        $alge_dist_dir =~ s{\\}{/}g;
+        $alge_dist_dir =~ s{^([a-z]):/}{/$1/}i;
+      }
+      $config_cmd .= " --with-libgpg-error-prefix=$alge_dist_dir";
+    }
+  }
+
+  return [ $config_cmd, 'make']
+}
+
 EOC
 
 my $builder = $class
