@@ -120,6 +120,9 @@ my $builder = $class
            alien_msys           => 1,
            alien_stage_install  => 1,
            alien_version_check  => 'libgcrypt-config --version',
+	   meta_merge           => { resources => { homepage   => 'https://github.com/salva/p5-Alien-Libgcrypt',
+                                                    bugtracker => 'https://github.com/salva/p5-Alien-Libgcrypt/issues',
+                                                    repository => 'https://github.com/salva/p5-Alien-Libgcrypt.git' } },
 );
 
 $builder->create_build_script();
