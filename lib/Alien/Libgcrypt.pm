@@ -1,6 +1,6 @@
 package Alien::Libgcrypt;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use 5.006;
 use strict;
