@@ -9,6 +9,7 @@ my $class = Alien::Base::ModuleBuild->subclass(class => 'Alien::Libgcrypt::Build
 use strict;
 use warnings;
 use Carp;
+$ENV{FTP_PASSIVE}=1;
 
 sub alien_check_installed_version {
   my $self = shift;
