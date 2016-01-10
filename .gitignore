@@ -1,0 +1,9 @@
+Build
+MANIFEST
+MANIFEST.SKIP*
+MYMETA.*
+_build/
+_share/
+blib/
+
+*~
