@@ -119,7 +119,7 @@ my $builder = $class
                                      location => '/gcrypt/libgcrypt/',
                                      pattern => qr/^libgcrypt-(\d+\.\d+\.\d+)\.tar\.gz$/ },
            alien_msys           => 1,
-           alien_stage_install  => 1,
+           alien_stage_install  => 0,
            alien_version_check  => 'libgcrypt-config --version',
 	   meta_merge           => { resources => { homepage   => 'https://github.com/salva/p5-Alien-Libgcrypt',
                                                     bugtracker => 'https://github.com/salva/p5-Alien-Libgcrypt/issues',
