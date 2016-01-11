@@ -12,6 +12,6 @@ env:
   - ALIEN_FORCE=1
   - NO_ALIEN_FORCE=1
 install:
-  - cpanm --notest Alien::Base~0.024
+  - cpanm --notest Alien::Base~0.024 Alien::Libgpg_error
 script:
   - perl Build.PL && ./Build manifest && perl Build.PL && ./Build installdeps && ./Build && ./Build test
