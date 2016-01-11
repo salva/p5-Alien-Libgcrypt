@@ -8,6 +8,11 @@ use warnings;
 
 use parent 'Alien::Base';
 
+if (__PACKAGE__->config('install_type') eq 'system') {
+    require Alien::Libgpg_error;
+    Alien::Libgpg_error->import;
+}
+
 1;
 
 =head1 NAME
