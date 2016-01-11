@@ -112,6 +112,7 @@ my $builder = $class
            add_to_cleanup       => [ 'Alien-Libgcrypt-*' ],
            configure_requires   => { 'Alien::Base' => '0.024',
                                      'Module::Build' => '0.36' },
+           alien_bin_requires   => { 'Alien::Libgpg_error' => 0 },
            alien_name           => 'libgcrypt',
            alien_repository     => { protocol => 'ftp',
                                      host => 'ftp.gnupg.org',
