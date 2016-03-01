@@ -110,7 +110,7 @@ my $builder = $class
            dist_author          => q{Salvador Fandiño <sfandino@yahoo.com>},
            dist_version_from    => 'lib/Alien/Libgcrypt.pm',
            add_to_cleanup       => [ 'Alien-Libgcrypt-*' ],
-           configure_requires   => { 'Alien::Base' => '0.024',
+           configure_requires   => { 'Alien::Base::ModuleBuild' => '0.024',
                                      'Module::Build' => '0.36' },
            alien_bin_requires   => { 'Alien::Libgpg_error' => 0 },
            alien_name           => 'libgcrypt',
